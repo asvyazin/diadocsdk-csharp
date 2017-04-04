@@ -129,6 +129,11 @@ namespace Diadoc.Api
 			return PerformHttpRequest<SignatureRejectionInfo>(null, "POST", "/ParseSignatureRejectionXml", xmlContent);
 		}
 
+		public InvoiceCorrectionRequestInfo ParseInvoiceCorrectionRequestXml(byte[] xmlContent)
+		{
+			return PerformHttpRequest<InvoiceCorrectionRequestInfo>(null, "POST", "/ParseInvoiceCorrectionRequestXml", xmlContent);
+		}
+
 		public ExtendedSignerDetails GetExtendedSignerDetails(string token, string boxId, string thumbprint, bool forBuyer, bool forCorrection)
 		{
 			var queryBuilder = new PathAndQueryBuilder("/ExtendedSignerDetails");

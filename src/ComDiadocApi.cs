@@ -192,6 +192,8 @@ namespace Diadoc.Api
 
 		User GetMyUser(string authToken);
 		DocumentList GetDocumentsByMessageId(string authToken, string boxId, string messageId);
+		InvoiceCorrectionRequestInfo ParseInvoiceCorrectionRequestXml(byte[] bytes);
+		InvoiceCorrectionRequestInfo ParseInvoiceCorrectionRequestXmlFromFile(string fileName);
 	}
 
 	[ComVisible(true)]
@@ -760,6 +762,16 @@ namespace Diadoc.Api
 		public UniversalTransferDocumentBuyerTitleInfo ParseUniversalTransferDocumentBuyerTitleXmlFromFile(string fileName)
 		{
 			return ParseUniversalTransferDocumentBuyerTitleXml(File.ReadAllBytes(fileName));
+		}
+
+		public InvoiceCorrectionRequestInfo ParseInvoiceCorrectionRequestXml(byte[] xmlContent)
+		{
+			return diadoc.ParseInvoiceCorrectionRequestXml(xmlContent);
+		}
+
+		public InvoiceCorrectionRequestInfo ParseInvoiceCorrectionRequestXmlFromFile(string fileName)
+		{
+			return ParseInvoiceCorrectionRequestXml(File.ReadAllBytes(fileName));
 		}
 
 		#endregion

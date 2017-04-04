@@ -642,6 +642,11 @@ namespace Diadoc.Api
 			return diadocHttpApi.ParseSignatureRejectionXml(signatureRejectionXmlContent);
 		}
 
+		public InvoiceCorrectionRequestInfo ParseInvoiceCorrectionRequestXml(byte[] invoiceCorrectionXmlContent)
+		{
+			return diadocHttpApi.ParseInvoiceCorrectionRequestXml(invoiceCorrectionXmlContent);
+		}
+
 		public IDocumentProtocolResult GenerateDocumentProtocol(string authToken, string boxId, string messageId,
 			string documentId)
 		{
